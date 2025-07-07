@@ -33,7 +33,7 @@ async def cmd_start(message: types.Message):
             referrals[user_id] = int(ref)
 
     if users[user_id]['paid']:
-    await message.answer("Вы уже оплатили доступ. Вот ссылка на клуб и курс:\nhttps://t.me/your_club\nhttps://t.me/your_course")
+        await message.answer("Вы уже оплатили доступ. Вот ссылка на клуб и курс:\nhttps://t.me/your_club\nhttps://t.me/your_course")
     else:
         kb = InlineKeyboardMarkup().add(InlineKeyboardButton("Оплатить 300₽", url="https://yoomoney.ru/pay"))
         await message.answer("Для доступа к клубу требуется оплата 300₽. Нажмите кнопку ниже для оплаты.", reply_markup=kb)
@@ -53,7 +53,7 @@ async def cmd_pay(message: types.Message):
     ref_id = referrals.get(user_id)
     if ref_id:
         balances[ref_id] = balances.get(ref_id, 0) + 100
-    await message.answer("Оплата прошла успешно! Вот ссылка на клуб и курс:\nhttps://t.me/your_club\nhttps://t.me/your_course")
+         await message.answer("Оплата прошла успешно! Вот ссылка на клуб и курс:\nhttps://t.me/your_club\nhttps://t.me/your_course")
 
 @dp.message_handler(commands=['admin'])
 async def cmd_admin(message: types.Message):
