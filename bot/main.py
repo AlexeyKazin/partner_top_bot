@@ -53,7 +53,6 @@ async def cmd_pay(message: types.Message):
     ref_id = referrals.get(user_id)
     if ref_id:
         balances[ref_id] = balances.get(ref_id, 0) + 100
-
     await message.answer("Оплата прошла успешно! Вот ссылка на клуб и курс:\nhttps://t.me/your_club\nhttps://t.me/your_course")
 
 @dp.message_handler(commands=['admin'])
