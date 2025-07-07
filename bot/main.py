@@ -57,12 +57,14 @@ async def cmd_pay(message: types.Message):
 async def cmd_admin(message: types.Message):
     if message.from_user.id != ADMIN_ID:
         return
+
     total_users = len(users)
     paid_users = sum(1 for u in users.values() if u['paid'])
     total_payments = sum(payments.values())
     total_cashback = sum(balances.values())
     profit = total_payments - total_cashback
     net_profit = profit * 0.93
+
     await message.answer(
         f"Всего пользователей: {total_users}\n"
         f"Оплатили: {paid_users}\n"
