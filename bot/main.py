@@ -54,10 +54,7 @@ async def cmd_pay(message: types.Message):
     if ref_id:
         balances[ref_id] = balances.get(ref_id, 0) + 100
 
-    await message.answer("Оплата прошла успешно! Вот ссылка на клуб и курс:
-https://t.me/your_club
-https://t.me/your_course")
-
+  await message.answer("Оплата прошла успешно! Вот ссылка на клуб и курс:\nhttps://t.me/your_club\nhttps://t.me/your_course")
 @dp.message_handler(commands=['admin'])
 async def cmd_admin(message: types.Message):
     if message.from_user.id != ADMIN_ID:
