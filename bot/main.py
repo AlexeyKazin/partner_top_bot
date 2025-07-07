@@ -1,7 +1,7 @@
 import logging
 import os
 import asyncio
-from aiogram import Bot, Dispatcher, types, executor
+from aiogram import executor
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
